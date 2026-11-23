@@ -1,4 +1,4 @@
-FROM registry.suse.com/bci/bci-base:16.0 AS base
+FROM registry.suse.com/bci/bci-base:16.1 AS base
 
 RUN zypper dup -y && zypper install -y \
     awk \
@@ -50,7 +50,7 @@ RUN curl -L https://sourceforge.net/projects/fetchmail/files/branch_6.6/fetchmai
     groupadd -g 1000 portafilter && \
     useradd --uid 1000 --gid 1000 --shell /sbin/nologin portafilter
 
-FROM registry.suse.com/bci/bci-micro:16.0
+FROM registry.suse.com/bci/bci-micro:16.1
 
 ENV HOME=/tmp/portafilter
 
